@@ -200,7 +200,20 @@ describe('Decoding a string', () => {
 			enc.setBase('abc')
 			enc.decode('acbcabcacbca');
 		}, Error);
-	});	
+	});
+
+	it('should return zero for the lowest char', () => {
+		enc.setBase(2);
+		assert.equal(enc.decode("0"), 0);
+		enc.setBase(8);
+		assert.equal(enc.decode("0"), 0);
+		enc.setBase(16);
+		assert.equal(enc.decode("0"), 0);
+		enc.setBase(10);
+		assert.equal(enc.decode("0"), 0);
+		enc.setBase('abcd');
+		assert.equal(enc.decode("a"), 0);
+	});
 
 	it('should decode from base 2 correctly', () => {
 		enc.setBase(2);
