@@ -81,10 +81,8 @@ function encoderGenerator() {
       num -= rem;
       num /= n;
     }
-    if (num % n != 0) {
-      output = valid[num % n] + output;
-    }
-
+    output = valid[num % n] + output;
+    
     return output;
   };
 

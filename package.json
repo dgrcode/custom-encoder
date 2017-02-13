@@ -1,6 +1,6 @@
 {
   "name": "custom-encoder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom encoder from integers to any custom base and viceversa",
   "main": "encoder.js",
   "scripts": {

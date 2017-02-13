@@ -64,6 +64,19 @@ describe('Encoding a number', () => {
 		}, TypeError, 'Falla con el float');
 	});
 
+	it('should return the lowest char when the number is zero', () => {
+		enc.setBase(2);
+		assert.equal(enc.encode(0), "0");
+		enc.setBase(8);
+		assert.equal(enc.encode(0), "0");
+		enc.setBase(16);
+		assert.equal(enc.encode(0), "0");
+		enc.setBase(10);
+		assert.equal(enc.encode(0), "0");
+		enc.setBase('abcd');
+		assert.equal(enc.encode(0), "a");
+	});
+
 	it('should encode in base 2 correctly', () => {
 		enc.setBase(2);
 		for (let i = 0; i < 1000; i++) {
